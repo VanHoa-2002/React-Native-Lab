@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   FlatList,
   SafeAreaView,
@@ -7,9 +7,12 @@ import {
   View,
 } from "react-native";
 import { dataWorkout } from "../data/data";
+import { UserContext } from "./userContext";
 
 export default function ListView() {
   const [selected, setSelected] = useState([]);
+  const { user } = useContext(UserContext);
+
   const workout = dataWorkout;
   function addSelected(item) {
     if (item.selected) {
@@ -30,7 +33,7 @@ export default function ListView() {
             textAlign: "center",
           }}
         >
-          Selected Workout
+          Selected Workout {user.username}
         </Text>
         <View
           style={{
