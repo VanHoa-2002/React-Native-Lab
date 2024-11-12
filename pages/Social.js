@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import { Icon } from "react-native-elements";
 import { data } from "../data/data";
-
 export default function Social() {
   const [like, setLike] = useState(true);
   const [active, setActive] = useState(true);
